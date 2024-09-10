@@ -12,8 +12,9 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
-            <scope>test</scope>
+            <scope>testJaccard</scope>
         </dependency>
+
     </dependencies>
 
     <properties>
