@@ -39,8 +39,7 @@ public class CosineSimilarity {
         magnitude2 = Math.sqrt(magnitude2);
 
         // 计算余弦相似度
-        double cosineSimilarity = dotProduct / (magnitude1 * magnitude2);
-        return cosineSimilarity;
+        return dotProduct / (magnitude1 * magnitude2);
     }
 
     private static Map<String, Integer> textToVector(String text) {
@@ -51,4 +50,5 @@ public class CosineSimilarity {
         }
         return vector;
     }
+
 }

@@ -1,4 +1,5 @@
 import org.example.tool.CosineSimilarity;
+import org.example.tool.StringUtils;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -27,6 +28,12 @@ public class testJaccard {
         getJaccardSimilarity(filePath + fileOrig, filePath + fileDis1);
         getJaccardSimilarity(filePath + fileOrig, filePath + fileDis10);
         getJaccardSimilarity(filePath + fileOrig, filePath + fileDis15);
+        StringUtils.calculateSimilarity(filePath + fileOrig, filePath + fileAdd);
+        StringUtils.calculateSimilarity(filePath + fileOrig, filePath + fileDel);
+        StringUtils.calculateSimilarity(filePath + fileOrig, filePath + fileDis1);
+        StringUtils.calculateSimilarity(filePath + fileOrig, filePath + fileDis10);
+        StringUtils.calculateSimilarity(filePath + fileOrig, filePath + fileDis15);
+
 
 
     }
