@@ -18,21 +18,24 @@ public class testJaccard {
 
     @Test
     public void testAllFile() throws IOException {
-        CosineSimilarity.getCosineSimilarity(filePath + fileOrig, filePath + fileAdd);
-        CosineSimilarity.getCosineSimilarity(filePath + fileOrig, filePath + fileDel);
-        CosineSimilarity.getCosineSimilarity(filePath + fileOrig, filePath + fileDis1);
-        CosineSimilarity.getCosineSimilarity(filePath + fileOrig, filePath + fileDis10);
-        CosineSimilarity.getCosineSimilarity(filePath + fileOrig, filePath + fileDis15);
-        getJaccardSimilarity(filePath + fileOrig, filePath + fileAdd);
-        getJaccardSimilarity(filePath + fileOrig, filePath + fileDel);
-        getJaccardSimilarity(filePath + fileOrig, filePath + fileDis1);
-        getJaccardSimilarity(filePath + fileOrig, filePath + fileDis10);
-        getJaccardSimilarity(filePath + fileOrig, filePath + fileDis15);
-        StringUtils.calculateSimilarity(filePath + fileOrig, filePath + fileAdd);
-        StringUtils.calculateSimilarity(filePath + fileOrig, filePath + fileDel);
-        StringUtils.calculateSimilarity(filePath + fileOrig, filePath + fileDis1);
-        StringUtils.calculateSimilarity(filePath + fileOrig, filePath + fileDis10);
-        StringUtils.calculateSimilarity(filePath + fileOrig, filePath + fileDis15);
+        while (true) {
+            CosineSimilarity.getCosineSimilarity(filePath + fileOrig, filePath + fileAdd);
+            CosineSimilarity.getCosineSimilarity(filePath + fileOrig, filePath + fileDel);
+            CosineSimilarity.getCosineSimilarity(filePath + fileOrig, filePath + fileDis1);
+            CosineSimilarity.getCosineSimilarity(filePath + fileOrig, filePath + fileDis10);
+            CosineSimilarity.getCosineSimilarity(filePath + fileOrig, filePath + fileDis15);
+            getJaccardSimilarity(filePath + fileOrig, filePath + fileAdd);
+            getJaccardSimilarity(filePath + fileOrig, filePath + fileDel);
+            getJaccardSimilarity(filePath + fileOrig, filePath + fileDis1);
+            getJaccardSimilarity(filePath + fileOrig, filePath + fileDis10);
+            getJaccardSimilarity(filePath + fileOrig, filePath + fileDis15);
+            StringUtils.calculateSimilarity(filePath + fileOrig, filePath + fileAdd);
+            StringUtils.calculateSimilarity(filePath + fileOrig, filePath + fileDel);
+            StringUtils.calculateSimilarity(filePath + fileOrig, filePath + fileDis1);
+            StringUtils.calculateSimilarity(filePath + fileOrig, filePath + fileDis10);
+            StringUtils.calculateSimilarity(filePath + fileOrig, filePath + fileDis15);
+        }
+
 
 
 

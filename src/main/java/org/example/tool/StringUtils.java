@@ -1,15 +1,43 @@
 package org.example.tool;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class StringUtils {
-    public static void calculateSimilarity(String path1, String path2) throws IOException {
+    public static double calculateSimilarity(String path1, String path2) throws IOException {
+        if (!Files.exists(Paths.get(path1))) {
+            throw new IOException("File not found: " + path1);
+        }
+        if (!Files.exists(Paths.get(path2))) {
+            throw new IOException("File not found: " + path2);
+        }
+
         String paper1 = new String(Files.readAllBytes(Paths.get(path1)));
         String paper2 = new String(Files.readAllBytes(Paths.get(path2)));
         double similarity = similarityScore(paper1, paper2);
         System.out.printf("The similarity score is: %.2f%%\n", similarity * 100);
+        return similarity;
+    }
+
+    public static void writeToFile(String filePath, double value) throws IOException {
+        File file = new File(filePath);
+        File parentDir = file.getParentFile();
+
+        if (parentDir != null && !parentDir.exists()) {
+            parentDir.mkdirs();
+        }
+
+        if (!file.exists()) {
+            file.createNewFile();
+        }
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, false))) {
+            writer.write(String.format("%.2f", value));
+        }
     }
 
     /**
@@ -20,6 +48,9 @@ public class StringUtils {
      * @return 编辑距离
      */
     public static int levenshteinDistance(String s1, String s2) {
+        if (s1.isEmpty()&&s2.isEmpty()) {
+            return 1;
+        }
         if (s1 == null || s2 == null) {
             throw new IllegalArgumentException("Strings must not be null");
         }
